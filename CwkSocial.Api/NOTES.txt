@@ -1,0 +1,28 @@
+﻿Commande pour Git
+=================
+…or create a new repository on the command line
+ echo "# DDD-CwkSocial" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/BlaiseAddeh/DDD-CwkSocial.git
+git push -u origin main
+
+
+…or push an existing repository from the command line
+ git remote add origin https://github.com/BlaiseAddeh/DDD-CwkSocial.git
+git branch -M main
+git push -u origin main
+
+
+
+
+
+
+Pour la gestion des versions de l'API
+
+> dotnet add package Microsoft.AspNetCore.Mvc.Versioning
+> dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
+
+
