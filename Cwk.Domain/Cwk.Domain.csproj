@@ -8,8 +8,12 @@
 
   <ItemGroup>
     <None Remove="Models\" />
+    <None Remove="Aggregates\PostAggregate\" />
+    <None Remove="Aggregates\UseProfile\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Aggregates\" />
+    <Folder Include="Aggregates\PostAggregate\" />
+    <Folder Include="Aggregates\UseProfileAggregate\" />
   </ItemGroup>
 </Project>
