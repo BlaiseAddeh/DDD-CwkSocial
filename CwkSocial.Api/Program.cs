@@ -1,9 +1,11 @@
 ﻿
 
 using CwkSocial.Api.Options;
+using CwkSocial.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+//------------------ Configuration pour le DbContext -------------
+var cs = builder.Configuration.GetConnectionString("Default");
+builder.Services.AddDbContext<DataContext>(options =>
+options.UseSqlServer(cs));
 
 //--------------- Gestion de la version de l'API -----------------
 

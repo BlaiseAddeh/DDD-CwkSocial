@@ -23,4 +23,46 @@ Pour la gestion des versions de l'API
 > dotnet add package Microsoft.AspNetCore.Mvc.Versioning
 > dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
 
+CREATION DE LA BASE DE DONNEES:
+===============================
+1- Placer la chaine de connexion dans le fichier appsettings.json
+
+  "ConnectionStrings": {
+    "Default": "server=localhost;User=sa;Password=@zerty.123#;Database=CwkSocial"
+  }
+
+2- Dans le projet CwkSocial.DAL
+
+> dotnet add package microsoft.entityframeworkCore --version=6.0.0
+> dotnet add package microsoft.entityframeworkCore.sqlserver --version=6.0.0
+> dotnet add package microsoft.entityframeworkCore.tools --version=6.0.0
+
+Vu que nous voulons utiliser identity, nous installons le package suivant:
+
+> dotnet add package microsoft.aspnetcore.identity.EntityFrameworkCore --version=6.0.0
+
+3- Creation d'une classe de Data context directement dans le projet CwkSocial
+
+NB: Dans CwkSocial.DAL, on ajoute la reference à Cwk.Domain
+
+4- Configuration du DbContext dans CwkSocial.Api
+   ---------------------------------------------
+
+> dotnet add package microsoft.entityframeworkCore --version=6.0.0
+> dotnet add package microsoft.entityframeworkCore.Sqlserver --version=6.0.0
+> dotnet add package microsoft.entityframeworkCore.Tools --version=6.0.0
+
+NB: Dans CwkSocial.Api, on ajoute la reference à wkSocial.DAL
+
+5- Exécuter les scripts de migration
+
+NB: Se placer dans le repertoire CwkSocial.DAL et exécuter le script
+                                 =============
+
+> dotnet ef migrations add initialcreation -s ../CwkSocial.Api/CwkSocial.Api.csproj
+
+> dotnet ef database update -s ../CwkSocial.Api/CwkSocial.Api.csproj
+
+
+
 
