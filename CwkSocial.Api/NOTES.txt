@@ -64,5 +64,39 @@ NB: Se placer dans le repertoire CwkSocial.DAL et exécuter le script
 > dotnet ef database update -s ../CwkSocial.Api/CwkSocial.Api.csproj
 
 
+IMPLEMENTATION DE CQRS
+======================
+
+CwkSocial.Api
+=============
+1- Creation d'une classe de configuration des routes de controller
+ Cette classe se nomme ApiRoutes. A pour but de centraliser le formattage de toutes les routes de l'application
+
+2- Les packages nuget à installer
+ On installera AutoMapper et Mediator
+ Le Mediator est utilisé pour l'envoi des commandes
+ AutoMapper sera utilisé pour mapper le DTO request à la commande
+
+> dotnet add package MediatR.Extensions.Microsoft.DependencyInjection
+> dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+*** Phase 1 de CwkSocial.Application
+Voir les packages à installer dans la phase 1
+
+*** Ajouter un repertoire "Contracts" pour la définition des contrats
+    Ce repertoire regroupera les contrats de chaque Entité
+
+    -Posts
+      ->Requests
+      ->Responses
+
+    -UserProfile
+      ->Requests
+      ->Responses
+
+
+
+
+
 
 

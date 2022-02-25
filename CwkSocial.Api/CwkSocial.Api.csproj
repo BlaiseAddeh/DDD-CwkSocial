@@ -10,6 +10,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="microsoft.entityframeworkCore" Version="6.0.0" />
@@ -26,18 +28,37 @@
     <None Remove="Controllers\V1\" />
     <None Remove="Controllers\V2\" />
     <None Remove="Options\" />
+    <None Remove="Contracts\" />
+    <None Remove="Contracts\Posts\" />
+    <None Remove="Contracts\UserProfile\" />
+    <None Remove="Contracts\Posts\Requests\" />
+    <None Remove="Contracts\Posts\Responses\" />
+    <None Remove="Contracts\UserProfile\Requests\" />
+    <None Remove="Contracts\UserProfile\Responses\" />
+    <None Remove="MappingProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Controllers\V1\" />
     <Folder Include="Controllers\V2\" />
     <Folder Include="Options\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Contracts\Posts\" />
+    <Folder Include="Contracts\UserProfile\" />
+    <Folder Include="Contracts\Posts\Requests\" />
+    <Folder Include="Contracts\Posts\Responses\" />
+    <Folder Include="Contracts\UserProfile\Requests\" />
+    <Folder Include="Contracts\UserProfile\Responses\" />
+    <Folder Include="MappingProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cwk.Domain\Cwk.Domain.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\CwkSocial.DAL\CwkSocial.DAL.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\CwkSocial.Application\CwkSocial.Application.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

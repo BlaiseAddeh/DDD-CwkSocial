@@ -6,4 +6,40 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="microsoft.entityframeworkCore" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="UserProfile\" />
+    <None Remove="UserProfile\Commands\" />
+    <None Remove="UserProfile\Queries\" />
+    <None Remove="UserProfile\CommandHandlers\" />
+    <None Remove="UserProfile\QueryHandlers\" />
+    <None Remove="Posts\" />
+    <None Remove="Posts\CommandHandlers\" />
+    <None Remove="Posts\Commands\" />
+    <None Remove="Posts\Queries\" />
+    <None Remove="Posts\QueryHandlers\" />
+    <None Remove="Automapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserProfiles\" />
+    <Folder Include="UserProfiles\Commands\" />
+    <Folder Include="UserProfiles\Queries\" />
+    <Folder Include="UserProfiles\CommandHandlers\" />
+    <Folder Include="UserProfiles\QueryHandlers\" />
+    <Folder Include="Posts\" />
+    <Folder Include="Posts\CommandHandlers\" />
+    <Folder Include="Posts\Commands\" />
+    <Folder Include="Posts\Queries\" />
+    <Folder Include="Posts\QueryHandlers\" />
+    <Folder Include="MappingProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cwk.Domain\Cwk.Domain.csproj" />
+    <ProjectReference Include="..\CwkSocial.DAL\CwkSocial.DAL.csproj" />
+  </ItemGroup>
 </Project>

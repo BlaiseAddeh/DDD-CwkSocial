@@ -1,7 +1,9 @@
 ﻿
 
 using CwkSocial.Api.Options;
+using CwkSocial.Application.UserProfiles.Queries;
 using CwkSocial.DAL;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -18,6 +20,12 @@ builder.Services.AddControllers();
 var cs = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<DataContext>(options =>
 options.UseSqlServer(cs));
+
+//--------------- Configuration de AutoMapper et de Mediator--------------------
+
+builder.Services.AddAutoMapper(typeof(Program), typeof(GetAllUserProfiles));
+builder.Services.AddMediatR(typeof(GetAllUserProfiles));
+
 
 //--------------- Gestion de la version de l'API -----------------
 

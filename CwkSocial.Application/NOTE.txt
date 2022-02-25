@@ -1,6 +1,23 @@
 ﻿Couche dans laquelle on fera les authentifications et
 les développent de la logique metier
-Datacontext
 
+Phase 1
+=======
+****** Ajouter une reference au projet Cwk.Domain
 
+> dotnet add package microsoft.entityframeworkCore --version=6.0.0
 
+Pour l'implémentation des médiator, il faut installer le package suivant:
+
+> dotnet add package MediatR
+
+Il faut aussi installer AutoMapper
+
+> dotnet add package AutoMapper
+
+NB: Chaque Controller devra avoir son repertoire de gestion de commande et de requete
+
+* Créer un repertoire UserProfiles avec les sous repertoires: Commands - Queries - CommandHandlers - QueryHandlers
+* Créer un repertoire Posts avec les sous repertoires: Commands - Queries - CommandHandlers - QueryHandlers
+
+* Creation d'un repertoire Automapper
