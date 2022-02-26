@@ -36,6 +36,7 @@
     <None Remove="Contracts\UserProfile\Requests\" />
     <None Remove="Contracts\UserProfile\Responses\" />
     <None Remove="MappingProfiles\" />
+    <None Remove="Contracts\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -50,6 +51,7 @@
     <Folder Include="Contracts\UserProfile\Requests\" />
     <Folder Include="Contracts\UserProfile\Responses\" />
     <Folder Include="MappingProfiles\" />
+    <Folder Include="Contracts\Common\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cwk.Domain\Cwk.Domain.csproj">

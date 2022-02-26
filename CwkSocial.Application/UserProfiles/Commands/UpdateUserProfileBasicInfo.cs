@@ -1,9 +1,11 @@
 ﻿using System;
+using Cwk.Domain.Aggregates.UseProfileAggregate;
+using CwkSocial.Application.Models;
 using MediatR;
 
 namespace CwkSocial.Application.UserProfiles.Commands
 {
-    public class UpdateUserProfileBasicInfo : IRequest // On ne veut rien retourner
+    public class UpdateUserProfileBasicInfo : IRequest<OperationResult<UserProfile>>
     {
         public Guid UserProfileId { get; set; } // On en a besoin pour faire le Update efficacement
         public string FirstName { get; set; }
